@@ -217,15 +217,6 @@ public class GameBoard extends JPanel implements KeyListener{
 			tresor3 = (Tresor3) Tresors3.get(i);
 			g2d.drawImage(tresor3.getImage(), tresor3.getX(), tresor3.getY(), null);
 		}
-		/*for (int i =0; i< Riens.size(); i++){
-			rien = (Rien) Riens.get(i);
-			g2d.drawImage(rien.getImage(), rien.getX(), rien.getY(), null);
-		}
-		for (int i =0; i< Riens.size(); i++){
-			rien = (Rien) Riens.get(i);
-			g2d.drawImage(rien.getImage(), rien.getX(), rien.getY(), null);
-		}*/
-		
 		for (int i =0; i< Idoles.size(); i++){
 			idole = (Idole) Idoles.get(i);
 			g2d.drawImage(idole.getImage(), idole.getX(), idole.getY(), null);
@@ -248,11 +239,6 @@ public class GameBoard extends JPanel implements KeyListener{
 		}
 		try{
 			g2d.drawImage(lorann.getImage(), lorann.getX(), lorann.getY(), null);
-			g2d.drawImage(boule.getImage(), boule.getX(), boule.getY(), null);
-			g2d.drawImage(monstreD.getImage(), monstreD.getX(), monstreD.getY(), null);
-			g2d.drawImage(idole.getImage(), idole.getX(), idole.getY(), null);
-			g2d.drawImage(crane.getImage(), crane.getX(), crane.getY(), null);
-			g2d.drawImage(ouverte.getImage(), ouverte.getX(), ouverte.getY(), null);
 		}
 		catch (Exception ex){}
 
@@ -345,23 +331,19 @@ public class GameBoard extends JPanel implements KeyListener{
 
 			if(lorannRec.intersects(bouleRec)){
 				if (lorann.getDir() == "BAS"){
-					Boules = new ArrayList<Boule>() ;
-					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
+					Boules.remove(i);
 					ChangerLevel2();
 				}
 				else if (lorann.getDir() == "HAUT"){
-					Boules = new ArrayList<Boule>() ;
-					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
+					Boules.remove(i);
 					ChangerLevel2();
 				}
 				else if (lorann.getDir() == "GAUCHE"){
-					Boules = new ArrayList<Boule>() ;
-					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
+					Boules.remove(i);
 					ChangerLevel2();
 				}
 				else if (lorann.getDir() == "DROITE"){
-					Boules = new ArrayList<Boule>() ;
-					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
+					Boules.remove(i);
 					ChangerLevel2();
 				}
 				
