@@ -67,7 +67,6 @@ public class GameBoard extends JPanel implements KeyListener{
 			Tresors1 = new ArrayList<Tresor1>();
 			Tresors2 = new ArrayList<Tresor2> ();
 			Tresors3 = new ArrayList<Tresor3> ();
-			//Riens = new ArrayList<Rien> ();
 			Boules = new ArrayList<Boule>() ;
 			Idoles = new ArrayList<Idole>() ;
 			MonstresD = new ArrayList<MonstreD>() ;
@@ -232,9 +231,33 @@ public class GameBoard extends JPanel implements KeyListener{
 	}
 	public void bouleTrouvee(){
 
-		Game[CraneX][CraneY] = "PORTEOUVERTE";
-		porteOuverte = new PorteOuverte(CraneX*16,CraneY*16);
-		
+		try{
+
+			for(int x = 0 ; x < 20 ; x++){
+				for(int y = 0 ; y < 12 ; y++){
+			
+				char i = 0;
+				char strImg = (char) i;
+
+				if (strImg == 'Y'){
+					Game [x][y] = "PORTEOUVERTE";
+					porteOuverte = new PorteOuverte(x*16,y*16);
+				}
+				else if (strImg == '\r' || strImg == '\n'){
+					x--;
+				}
+				if (x == 19){
+					y++;
+					x = 0;
+				}
+				else {
+					x++;
+				}
+			}
+		}
+		}
+		catch (Exception ex){}
+		repaint();
 		
 	}
 
